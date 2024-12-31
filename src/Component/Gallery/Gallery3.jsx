@@ -64,7 +64,7 @@ const IsaiKalaivanarkal = () => {
     'DeivigaArulalarkal': 'தெய்வீக அருளாளர்கள்',
     'IsaiArulalarkal': 'இசை அருளாளர்கள்',
     'IsaiKalaivanarkal': 'இசை கலைவாணர்கள்',
-    'IsaiPerairignarkal': 'முஇசைப் பேரறிஞர்கள்',
+    'IsaiPerairignarkal': 'இசைப் பேரறிஞர்கள்',
     'PannIsaiPerarignarkal': 'பண் இசைப் பேரறிஞர்கள்',
   };
 

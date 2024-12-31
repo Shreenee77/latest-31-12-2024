@@ -409,6 +409,9 @@ textarea:focus::placeholder{
 	color: #4f4a4a;
 	line-height: 18px;
 }
+.d-flexs{
+	display: block;
+}
 .header-middle .contact ul li span {
 	display: block;
 	font-family: 'Roboto', sans-serif;

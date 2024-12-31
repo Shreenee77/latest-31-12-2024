@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { MdEmail } from "react-icons/md";
 import { toggleLanguage } from "../../Redux/Slice/LanguageSlice";
@@ -12,7 +12,7 @@ import logo from "../../Assets/img/logo_new.jpg";
 import { IoIosPlayCircle } from "react-icons/io";
 import {
   FaFacebook,
-  FaTwitter,
+  // FaTwitter,
   FaPhoneSquareAlt,
   FaPinterest ,
   FaYoutube,
@@ -64,7 +64,7 @@ const Navbar = () => {
           <div className="right-block clearfix">
             <ul className="top-nav hidden-xs">
               <li>
-                <a href="/tamilisaisangam/register">Register</a>
+                <a href="/tamilisaisangam">Register</a>
               </li>
               <li>
                 <a href="#">Apply Online</a>
@@ -114,7 +114,7 @@ const Navbar = () => {
                   +91 94449 25880 / 92822 35964
                 </li>
               </ul>
-              <a href="/tamilisaisangam/login" className="login">
+              <a href="/tamilisaisangam" className="login">
                 Student Login<span className="icon-more-icon"> <IoIosPlayCircle /></span>
               </a>
             </div>

@@ -40,9 +40,9 @@ import Gallery4 from '../Component/Gallery/Gallery4'
 import Gallery5 from '../Component/Gallery/Gallery5'
 import CompetitionForm from '../Component/Home/Competitionform'
 import Undergraduate from '../Component/Undergraduate'
-import Staff from '../Pages/Staffs'
 import Payement from '../Component/Payement'
 import Adminlayout from '../Component/Admin/Admin/Adminlayout'
+import Staff from '../Pages/Staffs'
 
 
 const Routercomponent = () => {
@@ -71,9 +71,9 @@ const MainRoutes = () => {
         <Route path='/IsaiArulalarkal' element={<IsaiArulalarkal />} />
         <Route path='/library' element={<Library />} />
         <Route path="/tamil-isai-sangam" element={<Tamilisaisangam />} />
-        <Route path="/tamilisaisangam/register" element={<Register />} />
+        <Route path="/tamilisaisangam" element={<Register />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path="/tamilisaisangam/login" element={<Login />} />
+        <Route path="/tamilisaisangam" element={<Login />} />
         <Route path="/tamil-isai-history" element={<History />} />
         <Route path='/media' element={<Media />} />
         <Route path='/museum' element={<Museum />} />        

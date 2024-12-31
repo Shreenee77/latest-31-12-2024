@@ -87,7 +87,7 @@ const Library = () => {
           }
 
           .panel-title a:hover {
-            color: #F39C12;
+            color: #0682c4;
           }
 
           .panel-title a span {
