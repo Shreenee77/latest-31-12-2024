@@ -64,7 +64,7 @@ const Navbar = () => {
           <div className="right-block clearfix">
             <ul className="top-nav hidden-xs">
               <li>
-                <a href="/tamilisaisangam">Register</a>
+                <a href="/tamilisaisangam/register">Register</a>
               </li>
               <li>
                 <a href="#">Apply Online</a>
@@ -114,7 +114,7 @@ const Navbar = () => {
                   +91 94449 25880 / 92822 35964
                 </li>
               </ul>
-              <a href="/tamilisaisangam" className="login">
+              <a href="/tamilisaisangam/login" className="login">
                 Student Login<span className="icon-more-icon"> <IoIosPlayCircle /></span>
               </a>
             </div>

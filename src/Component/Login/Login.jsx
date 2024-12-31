@@ -133,7 +133,7 @@ const Login = () => {
                         <button
                           className="btn register"
                           type="button"
-                          onClick={() => navigate("/tamilisaisangam")}
+                          onClick={() => navigate("/tamilisaisangam/register")}
                         >
                           {item.subtitle}
                           <span className="icon-more-icon"></span>
