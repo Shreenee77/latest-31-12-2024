@@ -90,7 +90,7 @@ const Footer = () => {
                             
                               textDecoration: "none",
                               cursor: "pointer",
-                              color: "red",
+                              color: "#000000",
                             }}
                           >
                             GITS

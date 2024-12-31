@@ -4,6 +4,7 @@
   border-radius: 10px; /* Optional: Adds rounded corners */
   overflow: hidden; /* Ensures proper containment of child elements */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  height: 350px;
 }
 
 .card-container:hover {

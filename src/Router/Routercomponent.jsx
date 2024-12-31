@@ -34,11 +34,6 @@ import Specialcourse from '../Pages/Specialcourse'
 import Distanceeducation from '../Pages/Distanceeducation'
 import Openeducation from '../Pages/Openeducation'
 import Skypeclass from '../Pages/Skypeclass'
-import Adminlayout from '../Component/Admin/Adminlayout'
-import Sidebar from '../Component/Admin/Sidebar'
-import Topbar from '../Component/Admin/Topbar'
-import Staffdetails from '../Component/Admin/Staffdetails'
-import Userdetails from '../Component/Admin/Userdetails'
 import Audio from '../Pages/Audio'
 import Gallery3 from '../Component/Gallery/Gallery3'
 import Gallery4 from '../Component/Gallery/Gallery4'
@@ -47,6 +42,7 @@ import CompetitionForm from '../Component/Home/Competitionform'
 import Undergraduate from '../Component/Undergraduate'
 import Staff from '../Pages/Staffs'
 import Payement from '../Component/Payement'
+import Adminlayout from '../Component/Admin/Admin/Adminlayout'
 
 
 const Routercomponent = () => {
@@ -105,12 +101,12 @@ const MainRoutes = () => {
         <Route path='/skype-class' element={<Skypeclass />} />
         <Route path='/audio' element={<Audio />} />
         <Route path='/undergraduate' element={<Undergraduate/>}/>
+        <Route path='/staff' element={<Staff/>} />
 
 
         {/* Admin routes */}
-        <Route path='/admin' element={<Adminlayout />} />
-        <Route path='/staff' element={<Staff/>} />
-        <Route path='/userdetails' element={<Userdetails/>} />
+        <Route path='/admin/*' element={<Adminlayout/>} />
+
 
 
         
@@ -120,8 +116,7 @@ const MainRoutes = () => {
       {/* Sidebar and Topbar for admin routes */}
       {isAdminPath && (
         <>
-          <Sidebar />
-          <Topbar />
+         
         </>
       )}
     </>

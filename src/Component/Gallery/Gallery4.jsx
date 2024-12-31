@@ -14,8 +14,9 @@ import image46 from '../../Assets/gallery/img29 (44).jpg'
 import image47 from '../../Assets/gallery/img29 (43).jpg'
 import image48 from '../../Assets/gallery/img29 (42).jpg'
 import image49 from '../../Assets/gallery/img29 (41).jpg'
-import image50 from '../../Assets/gallery/img29 (39).jpg'
 import image51 from '../../Assets/gallery/img29 (40).jpg'
+import image50 from '../../Assets/gallery/img29 (39).jpg'
+import image90 from '../../Assets/gallery/img29 (38).jpg'
 import image52 from '../../Assets/gallery/img29 (37).jpg'
 import image53 from '../../Assets/gallery/img29 (36).jpg'
 import image55 from '../../Assets/gallery/img29 (35).jpg'
@@ -52,7 +53,7 @@ import image85 from '../../Assets/gallery/img29 (5).jpg'
 import image86 from '../../Assets/gallery/img29 (4).jpg'
 import image87 from '../../Assets/gallery/img29 (3).jpg'
 import image88 from '../../Assets/gallery/img29 (2).jpg'
-import image89 from '../../Assets/gallery/img29 (1).jpg'
+
 
 const Gallery4 = () => {
   const [activeHeader, setActiveHeader] = useState('IsaiPerairignarkal');
@@ -79,6 +80,7 @@ const Gallery4 = () => {
      image48 ,
      image49 ,
      image50 ,
+     image90 ,
 image51,
     image52 ,
      image53 ,
@@ -115,8 +117,8 @@ image79 ,
  image85 ,
  image86 ,
  image87 ,
- image88 ,
- image89 ,
+ image88 
+
 
 
   ];
@@ -147,13 +149,13 @@ image79 ,
   const headerItemStyle = (name) => ({
     fontSize: '12px',
     fontWeight: '600',
-    color: activeHeader === name ? '#F39C12' : '#333333',
+    color: activeHeader === name ? '#2D7C9E' : '#333333',
     textTransform: 'capitalize',
     cursor: 'pointer',
     padding: '12px 24px',
     borderRadius: '5px',
     transition: 'color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
-    boxShadow: activeHeader === name ? '0 0 10px rgba(243, 156, 18, 0.6)' : 'none',
+    boxShadow: activeHeader === name ? '0 0 10px rgba(28, 181, 205, 0.6)' : 'none',
   
   });
 
@@ -215,11 +217,11 @@ image79 ,
 
   const imageNameStyle = {
     marginTop: '10px',
-    fontSize: '14px',
+    fontSize: '13px',
     fontWeight: '600',
     color: '#FFF',
     textShadow: '0px 1px 1px ',
-    color:'rgba(243, 156, 18, 0.6)',
+    color: 'rgba(11, 47, 57, 0.6)',
     padding: '8px 12px',
     borderRadius: '5px',
     maxWidth: '100%',
@@ -260,14 +262,30 @@ image79 ,
       </div>
 
       <div style={{ textAlign: 'center' }}>
-        <h6 style={{ fontSize: '26px', fontWeight: '500', color: '#F39C12', marginBottom: '40px' }}>
+        <h6 style={{ fontSize: '26px', fontWeight: '500', color: '#2D7C9E', marginBottom: '40px' }}>
         {language === 'tamil' && translations[activeHeader] ? translations[activeHeader] : activeHeader}
         </h6>
       </div>
 
-      <div style={galleryContainerStyle}>{renderImages(images)}</div>
+      <div style={galleryContainerStyle}>{renderImages(images.slice(0,50))}</div>
 
-
+      <div
+  style={{
+    display: 'flex',
+    gap: '80px',
+    justifyContent: 'center',
+    padding: '20px',
+  }}
+  className="lastone"
+>
+  <div className="gallery-item" style={{ ...galleryItemStyle(true, 16), padding: '30px' }}>
+    <img src={image88} alt="Nammalvaar" style={galleryImageStyle} />
+    <div style={imageNameStyle}>
+      {language === 'tamil' ? 'உமையாள்புரம் திரு. கே. சிவராமன்' : 'Umayalpuram Thiru. K. Sivaraman'}
+    </div>
+  </div>
+ 
+</div>
 
 
       <style>
@@ -310,6 +328,7 @@ image79 ,
           @media (max-width: 768px) {
             .header-container {
               flex-direction: column;
+                 align-items: center;
             }
 
             .header-container a {

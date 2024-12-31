@@ -56,13 +56,14 @@ const DeivigaArulalarkal = () => {
   const headerItemStyle = (name) => ({
     fontSize: '12px',
     fontWeight: '600',
-    color: activeHeader === name ? '#F39C12' : '#333333',
+  //  color:"rgb(45, 124, 158)",
+    color: activeHeader === name ? '#2D7C9E' : '#333333',
     textTransform: 'capitalize',
     cursor: 'pointer',
     padding: '12px 24px',
     borderRadius: '5px',
     transition: 'color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
-    boxShadow: activeHeader === name ? '0 0 10px rgba(243, 156, 18, 0.6)' : 'none',
+    boxShadow: activeHeader === name ? '0 0 10px rgba(28, 181, 205, 0.6)' : 'none',
   });
 
   const images = [
@@ -131,7 +132,7 @@ const DeivigaArulalarkal = () => {
     fontWeight: '600',
     color: '#FFF',
     textShadow: '0px 1px 1px ',
-    color: 'rgba(243, 156, 18, 0.6)',
+    color: 'rgba(11, 47, 57, 0.6)',
     padding: '8px 12px',
     borderRadius: '5px',
     maxWidth: '100%',
@@ -177,7 +178,7 @@ const DeivigaArulalarkal = () => {
           style={{
             fontSize: '26px',
             fontWeight: '500',
-            color: '#F39C12',
+            color: '#2D7C9E',
             marginBottom: '40px',
           }}
         >
