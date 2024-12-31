@@ -203,7 +203,36 @@ const IsaiKalaivanarkal = () => {
         </h6>
       </div>
 
-      <div style={galleryContainerStyle}>{renderImages(images)}</div>
+      <div style={galleryContainerStyle}>{renderImages(images.slice(0,64))}</div>
+
+      <div
+  style={{
+    display: 'flex',
+    gap: '80px',
+    justifyContent: 'center',
+    padding: '20px',
+  }}
+  className="lastone"
+>
+  <div className="gallery-item" style={{ ...galleryItemStyle(true, 16), padding: '30px' }}>
+    <img src={image65} alt="Nammalvaar" style={galleryImageStyle} />
+    <div style={imageNameStyle}>
+      {language === 'tamil' ? 'நம்மாழ்வார்' : 'Nammalvaar'}
+    </div>
+  </div>
+  <div className="gallery-item" style={{ ...galleryItemStyle(true, 17), padding: '30px' }}>
+    <img src={image66} alt="Arunagirinathar" style={galleryImageStyle} />
+    <div style={imageNameStyle}>
+      {language === 'tamil' ? 'அருணகிரிநாதர்' : 'Arunagirinathar'}
+    </div>
+  </div>
+  <div className="gallery-item" style={{ ...galleryItemStyle(true, 17), padding: '30px' }}>
+    <img src={image67} alt="Arunagirinathar" style={galleryImageStyle} />
+    <div style={imageNameStyle}>
+      {language === 'tamil' ? 'அருணகிரிநாதர்' : 'Arunagirinathar'}
+    </div>
+  </div>
+</div>
 
       <style>
         {`

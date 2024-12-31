@@ -133,9 +133,6 @@ const IsaiArulalarkal = () => {
       <style>
         {`
           @media (max-width: 768px) {
-
-          
-
             .header-container {
               flex-direction: column;
               align-items: center;

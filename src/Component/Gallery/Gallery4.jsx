@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import jsondata from '../../Data/Data.json';
 import image38 from '../../Assets/gallery/img30.jpg'
-import image39 from '../../Assets/gallery/img29 (1).jpg'
+import image39 from '../../Assets/gallery/img902.jpg'
 import image40 from '../../Assets/gallery/img29 (50).jpg'
 import image41 from '../../Assets/gallery/img29 (49).jpg'
 import image42 from '../../Assets/gallery/img29 (48).jpg'
