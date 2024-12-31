@@ -24,6 +24,7 @@ import { PiStudent } from "react-icons/pi";
 import { FaAngleRight } from "react-icons/fa";
 import Audiofile from "./Audiofile";
 import Registeredcourse from "./Registeredcourse";
+import AddFeeStructure from "./Addfeestructure";
 
 const Adminlayout = () => {
   const [menuItems] = useState([
@@ -110,6 +111,8 @@ const Adminlayout = () => {
             <Route path="tansactiondetails" element={<Transactiondetails/>} />
             <Route path="audiofile" element={<Audiofile/>} />
             <Route path="registercourse" element={<Registeredcourse/>} />
+            <Route path="addfeecourse" element={<AddFeeStructure/>} />
+            <Route path="userdetails" element={<Userdetails/>} />
 
 
 

@@ -519,7 +519,7 @@ input[type="text"], input[type="email"], input[type="date"], input[type="file"] 
 
 button {
   padding: 4px;
-  background-color: #4CAF50;
+  background-color: #079DCE;
   color: white;
   border: none;
   border-radius: 4px;
@@ -764,7 +764,7 @@ button:hover {
 }
 
 .pagination button.active {
-  background-color: #4CAF50; /* Green for active */
+  background-color: #079DCE; /* Green for active */
   color: white;
 }
 
@@ -810,7 +810,7 @@ button:hover {
 }
 
 .payment-table th {
-  background-color: #4CAF50;
+  background-color: #079DCE;
   color: white;
 }
 
@@ -854,7 +854,7 @@ table th input[type="checkbox"] {
 }
 
 .transaction-table th {
-  background-color: #4CAF50;
+  background-color: #079DCE;
   color: white;
 }
 

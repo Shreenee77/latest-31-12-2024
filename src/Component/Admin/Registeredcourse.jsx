@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import './Registeredcourse.css';
 
 const Registeredcourse = () => {
-  const [registeredCourses, setRegisteredCourses] = useState([]);
-
-  useEffect(() => {
-    // Fetch the list of registered courses from the backend
-    const fetchRegisteredCourses = async () => {
-      try {
-        const response = await axios.get('http://localhost:3016/api/get-registered-courses');
-        setRegisteredCourses(response.data);
-      } catch (error) {
-        console.error("Error fetching registered courses", error);
-      }
-    };
-
-    fetchRegisteredCourses();
-  }, []);
+  const registeredCourses = [
+    { name: 'Karthik', gender: 'Male', course: 'Music Theory', phone: '9876543210', email: 'karthik@example.com' },
+    { name: 'Priya', gender: 'Female', course: 'Vocal Training', phone: '8765432109', email: 'priya@example.com' },
+    { name: 'Ramesh', gender: 'Male', course: 'Instrumental', phone: '7654321098', email: 'ramesh@example.com' },
+    { name: 'Divya', gender: 'Female', course: 'Folk Music', phone: '6543210987', email: 'divya@example.com' },
+    { name: 'Arun', gender: 'Male', course: 'Classical Music', phone: '5432109876', email: 'arun@example.com' },
+  ];
 
   return (
     <div className="registered-courses">
