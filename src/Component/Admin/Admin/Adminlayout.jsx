@@ -78,7 +78,7 @@ const Adminlayout = () => {
     },
     {
       title: "Contact us enquiy Details",
-      path: "exquiery",
+      path: "enquiery",
     },
   ]);
 
