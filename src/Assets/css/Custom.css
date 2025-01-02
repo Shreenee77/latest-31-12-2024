@@ -137,13 +137,10 @@ optgroup,
 select,
 textarea {
     font: inherit;
-    color: #ffffff;
-    background-color: #b6b6b6;
+    color: #000000;
+    background-color: #ededed;
     padding-top: 10px;
     border: none;
-    /* margin: 0;
-    font: inherit;
-    color: inherit */
     margin-top: 10px;
 }
 

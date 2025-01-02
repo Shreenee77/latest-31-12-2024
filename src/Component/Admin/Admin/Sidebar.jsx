@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-// import logo from "../../Assets/img/logo_new.jpg";
+import logo from "../../../Assets/img/logo_new.jpg";
 
 const Sidebar = ({ menuItems = [] }) => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -24,9 +24,9 @@ const Sidebar = ({ menuItems = [] }) => {
 
   return (
     <div className="sidebar">
-      {/* <div className="logo">
+      <div className="logo">
         <img src={logo} alt="Logo" />
-      </div> */}
+      </div>
       <ul>
         {menuItems.map((item, index) => (
           <li
@@ -40,8 +40,14 @@ const Sidebar = ({ menuItems = [] }) => {
                   className="menu-title"
                 >
                   {item.icon}
-                  <span>{item.title}</span>
-                  {item.icon2}
+                  <span style={{ fontSize: "12px" }}>{item.title}</span>
+                  <span
+                    className={`icon-rotate ${
+                      openIndex === index ? "open" : ""
+                    }`}
+                  >
+                    {item.icon2}
+                  </span>
                 </span>
                 {openIndex === index && (
                   <ul className="dropdown">

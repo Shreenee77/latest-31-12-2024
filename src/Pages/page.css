@@ -1,3 +1,7 @@
+
+
+
+/* ---------------home-------------- */
 /* Card container shadow */
 .card-container {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow to the card */
@@ -70,7 +74,7 @@
 }
 
 .table th {
-  background-color: #4CAF50; /* Green background color for table headers */
+  background-color: #086d8b; /* Green background color for table headers */
   color: white; /* White text color for contrast */
   padding: 10px; /* Optional: Add padding for better readability */
 }
@@ -81,7 +85,9 @@
 }
 
 .table tbody tr:hover {
-  background-color: #63bff5; /* Change to your preferred hover background color */
+    background: linear-gradient(#525252, #003870);
+    color: white;
+  
 }
 
 .table-containers {
@@ -195,14 +201,14 @@ padding-left: 20px;
   font-size: 14px;
   display: inline-block;
   padding: 5px 10px;
-  background-color: #4CAF50;
+  background-color: #097a96;
   border-radius: 4px;
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
-
 .more-info-link:hover {
-  background-color: #45a049;
+  background: linear-gradient(#50415E, #8EC5FC);
+  color: white;
 }
 
 .more-info-content {
