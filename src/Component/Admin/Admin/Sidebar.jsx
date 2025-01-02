@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-// import logo from "../../Assets/img/logo_new.jpg";
+import logo from '../../../Assets/img/logo_new.jpg'
 
 const Sidebar = ({ menuItems = [] }) => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -24,9 +24,9 @@ const Sidebar = ({ menuItems = [] }) => {
 
   return (
     <div className="sidebar">
-      {/* <div className="logo">
+      <div className="logo">
         <img src={logo} alt="Logo" />
-      </div> */}
+      </div>
       <ul>
         {menuItems.map((item, index) => (
           <li

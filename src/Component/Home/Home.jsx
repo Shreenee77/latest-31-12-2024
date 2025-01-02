@@ -108,34 +108,21 @@ const Banner = () => {
 
   return (
     <>
-      <div
+      <div className="slides11"
         style={{
           position: "relative",
-          width: "100%",
-          height: "100vh",
           overflow: "hidden",
         }}
       >
-        <div style={{ position: "relative", width: "100%", height: "100%" }}>
+        <div className="slides1" style={{ position: "relative"}}>
           {slides.map((slide, index) => (
             <div
-              className="slidei"
-              key={index}
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                backgroundImage: `url(${slide.Image})`,
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                opacity: index === currentSlide ? 1 : 0,
-                transition: "opacity 1.5s ease-in-out",
-              }}
-            >            
-            </div>
+            className={`slides ${index === currentSlide ? "active" : "inactive"}`}
+            key={index}
+            style={{
+              backgroundImage: `url(${slide.Image})`,
+            }}
+          ></div>
           ))}
         </div>
       </div>
@@ -144,20 +131,12 @@ const Banner = () => {
           <div className="container1">
             <ul
               className="row our-links"
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: "20px",
-                padding: "0",
-                listStyleType: "none",
-                flexWrap: "wrap", 
-              }}
+             
             >
               <li
                 className="col-sm-4 apply-online clearfix equal-hight"
                 style={{
                   textAlign: "center",
-                  padding: "30px",
                   background:
                     "linear-gradient(135deg, #00A6D6,rgb(53, 81, 110))",
                   borderRadius: "12px",
@@ -190,7 +169,6 @@ const Banner = () => {
                 className="col-sm-4 prospects clearfix equal-hight"
                 style={{
                   textAlign: "center",
-                  padding: "30px",
                   background: "linear-gradient(135deg, #FF6A00, #FFA500)",
                   borderRadius: "12px",
                   boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.1)",
@@ -221,7 +199,6 @@ const Banner = () => {
                 className="col-sm-4 certification clearfix equal-hight"
                 style={{
                   textAlign: "center",
-                  padding: "30px",
                   background:
                     "linear-gradient(135deg, #00A6D6,rgb(53, 81, 110))",
                   borderRadius: "12px",

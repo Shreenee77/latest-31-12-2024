@@ -25,11 +25,12 @@ import { FaAngleRight } from "react-icons/fa";
 import Audiofile from "./Audiofile";
 import Registeredcourse from "./Registeredcourse";
 import AddFeeStructure from "./Addfeestructure";
+import { IoIosHome } from "react-icons/io";
 
 const Adminlayout = () => {
   const [menuItems] = useState([
     {
-      icon:<LuLayoutDashboard/>,
+      icon:<IoIosHome/>,
       title: "Dashboard",
       path: "dashboard",      
       icon2:<FaAngleRight/>
