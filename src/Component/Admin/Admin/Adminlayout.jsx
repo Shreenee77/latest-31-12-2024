@@ -15,7 +15,8 @@ import Addstaff from "./Addstaff";
 import Paymentdetails from "./Paymentdetails";
 import Transactiondetails from "./Transactiondetails";
 import { LuLayoutDashboard,LuGalleryHorizontalEnd } from "react-icons/lu";
-import { FaRegUser,FaSortAmountUp} from "react-icons/fa";
+import { FaRegUser,FaSortAmountUp,FaChalkboardTeacher} from "react-icons/fa"
+import { GiArchiveRegister } from "react-icons/gi";
 import { MdPayments } from "react-icons/md";
 import { GrTransaction } from "react-icons/gr";
 import { FaFileAudio } from "react-icons/fa";
@@ -43,19 +44,21 @@ const Adminlayout = () => {
     },
     {
       title: "All Details",
+      icon2:<FaAngleRight/>,
       submenu: [
-        { icon:<MdPayments/>,title: "Payment Details", path: "paymentdetails" ,icon2:<FaAngleRight/>},
-        { icon:<GrTransaction/>,title: "Transaction Details", path: "tansactiondetails",icon2:<FaAngleRight/>},
-        { icon:<FaFileAudio/>,title: "Audio File", path: "audiofile",icon2:<FaAngleRight/> },
-        { title: "Register Course", path: "registercourse" },
+        { icon:<MdPayments/>,title: "Payment Details", path: "paymentdetails" },
+        { icon:<GrTransaction/>,title: "Transaction Details", path: "tansactiondetails"},        
+        { icon:<GiArchiveRegister/>,title: "Register Course", path: "registercourse" },
       ],
     },
 
     {
       title: "Upload",
+      icon2:<FaAngleRight/>,
       submenu: [
-        {icon:<LuGalleryHorizontalEnd/>, title: "Gallery Upload", path: "galleryupload",icon2:<FaAngleRight/> },
-        {icon:<RiGalleryView/>, title: "Image/Video Upload", path: "imageupload",icon2:<FaAngleRight/> },
+        {icon:<LuGalleryHorizontalEnd/>, title: "Gallery Upload", path: "galleryupload" },
+        {icon:<RiGalleryView/>, title: "Image/Video Upload", path: "imageupload" },
+        { icon:<FaFileAudio/>,title: "Audio File", path: "audiofile" },
       ],
     },
     {
@@ -72,7 +75,7 @@ const Adminlayout = () => {
       path: "couse details",
     },
     {
-      icon:<PiStudent/>,
+      icon:<FaChalkboardTeacher/>,
       title: "Staff Details",
       path: "staffdetails",
       icon2:<FaAngleRight/>

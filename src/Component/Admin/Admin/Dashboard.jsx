@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FaTwitter, FaFacebook, FaGoogle } from "react-icons/fa";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -55,17 +54,18 @@ const Dashboard = () => {
     {
       icon: <FaSortAmountUpAlt />,
       icon2: <FaSortAmountDownAlt />,
-      title: "Yearly Collection",
+      title: "Fees Collection",
       value: "₹13,921",
       increase: "51%",
       color: "#4CAF50",
     },
   ];
 
+  // Data for different filters
   const chartDataSets = {
     Yearly: {
       labels: ["2020", "2021", "2022", "2023"],
-      data: [1200, 1500, 2000, 2500],
+      data: [100, 200, 300, 400],
     },
     Monthly: {
       labels: [
@@ -98,7 +98,7 @@ const Dashboard = () => {
         data: chartDataSets[filter].data,
         backgroundColor: ["#4CAF50", "#E04446", "#FFC107", "#4CAF50"],
         borderColor: ["#388E3C", "#B71C1C", "#FFA000", "#388E3C"],
-        borderWidth: 1,
+        borderWidth: 0.4,
       },
     ],
   };
@@ -110,76 +110,42 @@ const Dashboard = () => {
       title: { display: true, text: `Dashboard Statistics - ${filter}` },
     },
   };
-  const monthlyEarningsOptions = {
-    responsive: true,
-    plugins: {
-      legend: { position: "top" },
-      title: { display: true, text: "Monthly Total Earnings" },
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-        ticks: {
-          callback: (value) => `₹${value}`, // Add currency symbol
-        },
-      },
-    },
-  };
-  const monthlyEarningsData = {
-    labels: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ],
-    datasets: [
-      {
-        label: "Monthly Earnings (₹)",
-        data: [
-          12000, 15000, 18000, 20000, 22000, 25000, 27000, 30000, 28000, 26000,
-          24000, 20000,
-        ],
-        backgroundColor: "rgba(54, 162, 235, 0.5)",
-        borderColor: "rgba(54, 162, 235, 1)",
-        borderWidth: 1,
-      },
-    ],
+
+  // New student list data
+  const [students, setStudents] = useState([
+    { id: 1, name: "Jens Brincker", gender: "Male", dateofbirth: "27/05/2016", address: "Chennai", phone: "9897538933", email: "aun@gmail.com", admitDate: "27/05/2016", fees: "2500", course: "Vocal" },
+    { id: 2, name: "Mark Hay", gender: "Male", dateofbirth: "26/05/2018", address: "Bangalore", phone: "9887546789", email: "markhay@gmail.com", admitDate: "26/05/2018", fees: "3000", course: "Guitar" },
+    { id: 3, name: "Anthony Davie", gender: "Male", dateofbirth: "21/05/2017", address: "Hyderabad", phone: "9678542345", email: "anthonydavie@gmail.com", admitDate: "21/05/2017", fees: "3500", course: "Drums" },
+    { id: 4, name: "David Perry", gender: "Male", dateofbirth: "20/04/2019", address: "Mumbai", phone: "9998765432", email: "davidperry@gmail.com", admitDate: "20/04/2019", fees: "2800", course: "Piano" },
+    { id: 5, name: "Sarah Smith", gender: "Female", dateofbirth: "19/06/2020", address: "Delhi", phone: "9123456789", email: "sarahsmith@gmail.com", admitDate: "19/06/2020", fees: "3200", course: "Violin" },
+  ]);
+
+  const [selectedStudent, setSelectedStudent] = useState(null);
+
+  const handleEdit = (id) => {
+    // Find the student by id and set it to the selectedStudent state
+    const student = students.find((s) => s.id === id);
+    setSelectedStudent({ ...student });
   };
 
-  const data2 = [
-    {
-      platform: "Twitter",
-      icon: <FaTwitter style={{ color: "#1DA1F2" }} />,
-      likes: "12,281",
-      growth: "+7.2%",
-      target: "35,098",
-      duration: "350",
-    },
-    {
-      platform: "Facebook",
-      icon: <FaFacebook style={{ color: "#1877F2" }} />,
-      likes: "11,200",
-      growth: "+6.2%",
-      target: "34,185",
-      duration: "800",
-    },
-    {
-      platform: "Google",
-      icon: <FaGoogle style={{ color: "#DB4437" }} />,
-      likes: "10,500",
-      growth: "+5.9%",
-      target: "25,998",
-      duration: "900",
-    },
-  ];
+  const handleChange = (e) => {
+    // Update the selected student's data in the state
+    const { name, value } = e.target;
+    setSelectedStudent((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSave = () => {
+    // Update the students array with the edited data
+    setStudents((prevState) =>
+      prevState.map((s) =>
+        s.id === selectedStudent.id ? selectedStudent : s
+      )
+    );
+    setSelectedStudent(null); // Clear the form after saving
+  };
 
   return (
     <>
@@ -220,71 +186,150 @@ const Dashboard = () => {
         </select>
       </div>
 
+      {/* Chart Section */}
       <div className="row">
-        <div className="col-sm-6 statistics">
-          {/* Existing Statistics Bar Chart */}
-          <Bar
-            data={{
-              labels: ["2020", "2021", "2022", "2023"],
-              datasets: [
-                {
-                  label: `Statistics (${filter})`,
-                  data: [1200, 1500, 2000, 2500],
-                  backgroundColor: ["#4CAF50", "#E04446", "#FFC107", "#4CAF50"],
-                  borderColor: ["#388E3C", "#B71C1C", "#FFA000", "#388E3C"],
-                  borderWidth: 1,
-                },
-              ],
-            }}
-            options={{
-              responsive: true,
-              plugins: {
-                legend: { position: "top" },
-                title: {
-                  display: true,
-                  text: `Dashboard Statistics - ${filter}`,
-                },
-              },
-            }}
-          />
-        </div>
         <div className="col-sm-6">
-          {/* Monthly Earnings Bar Chart */}
-          <Bar data={monthlyEarningsData} options={monthlyEarningsOptions} />
+          <div className="statistics">
+            <Bar data={chartData} options={chartOptions} />
+          </div>
         </div>
       </div>
-      <div className="dashboard-container">
-        <div className="row">
-          <div className="col-lg-4">
-            <div className="dashboard-container">
-              {data2.map((item, index) => (
-                <div className="dashboard-card" key={index}>
-                  <h3 className="dashboard-title">{item.title}</h3>
-                  <div className="dashboard-row">
-                    <div
-                      className="dashboard-icon"
-                      style={{ color: item.color }}
-                    >
-                      {item.icon}
-                    </div>
-                    <div className="dashboard-value">{item.platform}</div>
-                    <div className="dashboard-increase">{item.likes}</div>
-                  </div>
-                  {/* <div className="progress-bar">
-                    <p
-                      style={{
-                        color: item.growth.startsWith("+")
-                          ? "#4CAF50"
-                          : "#E04446",
-                      }}
-                    >
-                      {item.growth} Total Likes
-                    </p>
-                    <p>Target: {item.target}</p>
-                    <p>Duration: {item.duration} days</p>
-                  </div> */}
+
+      {/* New Student List Table */}
+      <div className="row">
+        <div className="col-md-12">
+          <div className="card">
+            <div className="card-header">
+              <h3>New Student List</h3>
+            </div>
+            <div className="card-body">
+              <table className="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Date Of Birth</th>
+                    <th>Address</th>
+                    <th>Mobile No</th>
+                    <th>Email</th>
+                    <th>Date Of Admit</th>
+                    <th>Fees</th>
+                    <th>Course</th>
+                    <th>Edit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {students.map((student) => (
+                    <tr key={student.id}>
+                      <td>{student.id}</td>
+                      <td>{student.name}</td>
+                      <td>{student.gender}</td>
+                      <td>{student.dateofbirth}</td>
+                      <td>{student.address}</td>
+                      <td>{student.phone}</td>
+                      <td>{student.email}</td>
+                      <td>{student.admitDate}</td>
+                      <td>{student.fees}</td>
+                      <td>{student.course}</td>
+                      <td>
+                        <button onClick={() => handleEdit(student.id)}>Edit</button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
+              {/* Edit Form */}
+              {selectedStudent && (
+                <div className="edit-form">
+                  <h4>Edit Student</h4>
+                  <form>
+                    <label>
+                      Name:
+                      <input
+                        type="text"
+                        name="name"
+                        value={selectedStudent.name}
+                        onChange={handleChange}
+                      />
+                    </label>
+                    <label>
+                      Gender:
+                      <input
+                        type="text"
+                        name="professor"
+                        value={selectedStudent.gender}
+                        onChange={handleChange}
+                      />
+                    </label>
+                    <label>
+                      Date of Birth:
+                      <input
+                        type="text"
+                        name="dateofbirth"
+                        value={selectedStudent.dateofbirth}
+                        onChange={handleChange}
+                      />
+                    </label>
+                    <label>
+                      Address:
+                      <input
+                        type="text"
+                        name="address"
+                        value={selectedStudent.address}
+                        onChange={handleChange}
+                      />
+                    </label>
+                    <label>
+                      Mobile:
+                      <input
+                        type="text"
+                        name="phone"
+                        value={selectedStudent.phone}
+                        onChange={handleChange}
+                      />
+                    </label>
+                    <label>
+                      Email:
+                      <input
+                        type="text"
+                        name="email"
+                        value={selectedStudent.email}
+                        onChange={handleChange}
+                      />
+                    </label>
+                    <label>
+                      Date of Admit:
+                      <input
+                        type="text"
+                        name="admitDate"
+                        value={selectedStudent.admitDate}
+                        onChange={handleChange}
+                      />
+                    </label>
+                    <label>
+                      Fees:
+                      <input
+                        type="text"
+                        name="fees"
+                        value={selectedStudent.fees}
+                        onChange={handleChange}
+                      />
+                    </label>
+                    <label>
+                      Course:
+                      <input
+                        type="text"
+                        name="course"
+                        value={selectedStudent.course}
+                        onChange={handleChange}
+                      />
+                    </label>
+                    <button type="button" onClick={handleSave}>Save</button>
+                  </form>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
