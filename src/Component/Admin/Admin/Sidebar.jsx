@@ -23,69 +23,75 @@ const Sidebar = ({ menuItems = [] }) => {
   };
 
   return (
-    <div className="sidebar">
-      <div className="logo">
-        <img src={logo} alt="Logo" />
-      </div>
-      <ul>
-        {menuItems.map((item, index) => (
-          <li
-            key={index}
-            className={`menu-item ${openIndex === index ? "open" : ""}`}
-          >
-            {item.submenu ? (
-              <>
-                <span
-                  onClick={() => handleMenuClick(index)}
-                  className="menu-title"
+    <>
+      <div className="sidebar">
+        <div className="logo">
+          <img
+            src={logo}
+            alt="Logo"
+            style={{ background: "#003751" }}
+          />
+        </div>
+        <ul>
+          {menuItems.map((item, index) => (
+            <li
+              key={index}
+              className={`menu-item ${openIndex === index ? "open" : ""}`}
+            >
+              {item.submenu ? (
+                <>
+                  <span
+                    onClick={() => handleMenuClick(index)}
+                    className="menu-title"
+                  >
+                    {item.icon}
+                    <span style={{ fontSize: "12px" }}>{item.title}</span>
+                    <span
+                      className={`icon-rotate ${
+                        openIndex === index ? "open" : ""
+                      }`}
+                    >
+                      {item.icon2}
+                    </span>
+                  </span>
+                  {openIndex === index && (
+                    <ul className="dropdown">
+                      {item.submenu.map((subItem, subIndex) => (
+                        <li
+                          key={subIndex}
+                          className={`submenu-item ${
+                            location.pathname === `/admin/${subItem.path}`
+                              ? "active"
+                              : ""
+                          }`}
+                        >
+                          <Link to={`/admin/${subItem.path}`}>
+                            {subItem.icon && <span>{subItem.icon}</span>}
+                            {subItem.title}
+                            {subItem.icon2 && <span>{subItem.icon2}</span>}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              ) : (
+                <Link
+                  to={`/admin/${item.path}`}
+                  className={`menu-title ${
+                    location.pathname === `/admin/${item.path}` ? "active" : ""
+                  }`}
                 >
                   {item.icon}
-                  <span style={{ fontSize: "12px" }}>{item.title}</span>
-                  <span
-                    className={`icon-rotate ${
-                      openIndex === index ? "open" : ""
-                    }`}
-                  >
-                    {item.icon2}
-                  </span>
-                </span>
-                {openIndex === index && (
-                  <ul className="dropdown">
-                    {item.submenu.map((subItem, subIndex) => (
-                      <li
-                        key={subIndex}
-                        className={`submenu-item ${
-                          location.pathname === `/admin/${subItem.path}`
-                            ? "active"
-                            : ""
-                        }`}
-                      >
-                        <Link to={`/admin/${subItem.path}`}>
-                          {subItem.icon && <span>{subItem.icon}</span>}
-                          {subItem.title}
-                          {subItem.icon2 && <span>{subItem.icon2}</span>}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </>
-            ) : (
-              <Link
-                to={`/admin/${item.path}`}
-                className={`menu-title ${
-                  location.pathname === `/admin/${item.path}` ? "active" : ""
-                }`}
-              >
-                {item.icon}
-                <span>{item.title}</span>
-                {item.icon2}
-              </Link>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
+                  <span>{item.title}</span>
+                  {item.icon2}
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 

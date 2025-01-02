@@ -9,6 +9,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { IoIosHome } from "react-icons/io";
+import { useLocation } from "react-router-dom";
 import { FaArrowUpLong, FaArrowDownLong } from "react-icons/fa6";
 import { MdOutlineLibraryBooks } from "react-icons/md";
 import { FaSortAmountUpAlt, FaSortAmountDownAlt } from "react-icons/fa";
@@ -25,6 +27,7 @@ ChartJS.register(
 
 const Dashboard = () => {
   const [filter, setFilter] = useState("Yearly");
+  const location = useLocation();
 
   const data = [
     {
@@ -144,11 +147,16 @@ const Dashboard = () => {
         s.id === selectedStudent.id ? selectedStudent : s
       )
     );
-    setSelectedStudent(null); // Clear the form after saving
+    setSelectedStudent(null); 
   };
 
+  const handleDelete = (id) => {
+    const updatedStudents = students.filter((student) => student.id !== id);
+    setStudents(updatedStudents);
+  };
   return (
     <>
+    <h2><IoIosHome style={{ marginRight: "10px", color: "#035069" }} />{location.pathname.replace("/", "") || "Home"}</h2>
       <div className="row">
         <div className="dashboard-container">
           {data.map((item, index) => (
@@ -216,7 +224,7 @@ const Dashboard = () => {
                     <th>Date Of Admit</th>
                     <th>Fees</th>
                     <th>Course</th>
-                    <th>Edit</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -234,6 +242,7 @@ const Dashboard = () => {
                       <td>{student.course}</td>
                       <td>
                         <button onClick={() => handleEdit(student.id)}>Edit</button>
+                        <button onClick={() => handleDelete(student.id)}>Delete</button>
                       </td>
                     </tr>
                   ))}

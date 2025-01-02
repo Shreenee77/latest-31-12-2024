@@ -77,12 +77,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 15px;
   cursor: pointer;
 }
 
 .menu-item .menu-title span {
-  margin: 0 8px;
+  margin: 0 0px;
 }
 
 .submenu-item {
@@ -197,20 +197,21 @@ display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  margin-top: 80px;
 }
 
 .main-content {
   margin-left: 250px;
-  margin-top: 60px;
+  /* margin-top: 80px; */
   /* padding: 65px; */
   display: flex;
   flex-direction: column;
-  width: 1190px;
+  width: 100%;
 }
 
 .topbar {
 display: flex;
-justify-content: space-between;
+/* justify-content: space-between; */
 align-items: center;
 background-color: #fafafa;
 color: rgb(0, 0, 0);
@@ -261,6 +262,102 @@ list-style: none;
 
 }
 
+.search {
+  flex: 1;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  max-width: 25px; 
+  transition: max-width 0.3s ease-in-out; 
+  overflow: hidden;
+}
+
+.search-container.active {
+  max-width: 250px; 
+}
+
+.search-icon {
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  padding: 0 5px;
+}
+
+.close-icon {
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Gap removed between icons and profile dropdown */
+}
+
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.profile-dropdown {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-icon {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.admin-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dropdown-menu {
+  display: none; /* Hide dropdown by default */
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  list-style: none;
+  padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
 .topbar .dropdown-menu li {
 padding: 5px 10px;
 }
