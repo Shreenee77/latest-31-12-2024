@@ -73,8 +73,7 @@ const IsaiKalaivanarkal = () => {
     image30, image31, image32, image33, image34, image35, image36, image37, image38, 
     image39, image40, image41, image42, image43, image44, image45, image46, image47,
     image48, image50, image51, image52, image53, image54, image55, image56, image57,
-    image58, image59, image60, image61, image62,  image64, image65, image66, 
-    image67
+    image58, image59, image60, image61, image62,  image64
   ];
 
   const { language } = useSelector((state) => state.language);
@@ -217,19 +216,19 @@ const IsaiKalaivanarkal = () => {
   <div className="gallery-item" style={{ ...galleryItemStyle(true, 16), padding: '30px' }}>
     <img src={image65} alt="Nammalvaar" style={galleryImageStyle} />
     <div style={imageNameStyle}>
-      {language === 'tamil' ? 'நம்மாழ்வார்' : 'Nammalvaar'}
+      {language === 'tamil' ? 'சுவாதித்திருநாள் மகாராஜா' : 'Swathi Thirunal Maharaja'}
     </div>
   </div>
   <div className="gallery-item" style={{ ...galleryItemStyle(true, 17), padding: '30px' }}>
     <img src={image66} alt="Arunagirinathar" style={galleryImageStyle} />
     <div style={imageNameStyle}>
-      {language === 'tamil' ? 'அருணகிரிநாதர்' : 'Arunagirinathar'}
+      {language === 'tamil' ? 'கே.பி.சுந்தராம்பாள்' : 'K.P. Sundarambal'}
     </div>
   </div>
   <div className="gallery-item" style={{ ...galleryItemStyle(true, 17), padding: '30px' }}>
     <img src={image67} alt="Arunagirinathar" style={galleryImageStyle} />
     <div style={imageNameStyle}>
-      {language === 'tamil' ? 'அருணகிரிநாதர்' : 'Arunagirinathar'}
+      {language === 'tamil' ? 'டி.கே.சி.' : 'D.K.C.'}
     </div>
   </div>
 </div>
@@ -277,6 +276,9 @@ const IsaiKalaivanarkal = () => {
 
             .header-container a {
               margin-bottom: 10px;
+            }
+                  .lastone {
+              flex-direction: column;
             }
         }
         `}

@@ -244,6 +244,7 @@ image79 ,
           {galleryd[0]?.gallery4?.[index]?.title || 'No Title Available'}
         </div>
       </div>
+      
     ));
 
   return (
@@ -267,7 +268,7 @@ image79 ,
         </h6>
       </div>
 
-      <div style={galleryContainerStyle}>{renderImages(images.slice(0,50))}</div>
+      <div style={galleryContainerStyle}>{renderImages(images.slice(0,48))}</div>
 
       <div
   style={{
@@ -278,6 +279,18 @@ image79 ,
   }}
   className="lastone"
 >
+  <div className="gallery-item" style={{ ...galleryItemStyle(true, 16), padding: '30px' }}>
+    <img src={image86} alt="Nammalvaar" style={galleryImageStyle} />
+    <div style={imageNameStyle}>
+      {language === 'tamil' ? 'திரு.சஞ்சய் சுப்பிரமணியம்' : 'Mr. Sanjay Subrahmanyan'}
+    </div>
+  </div>
+  <div className="gallery-item" style={{ ...galleryItemStyle(true, 16), padding: '30px' }}>
+    <img src={image87} alt="Nammalvaar" style={galleryImageStyle} />
+    <div style={imageNameStyle}>
+      {language === 'tamil' ? 'திரு.டி.எம்.கிரிஷ்ணா' : 'Mr. T.M. Krishna'}
+    </div>
+  </div>
   <div className="gallery-item" style={{ ...galleryItemStyle(true, 16), padding: '30px' }}>
     <img src={image88} alt="Nammalvaar" style={galleryImageStyle} />
     <div style={imageNameStyle}>
