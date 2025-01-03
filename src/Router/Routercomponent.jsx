@@ -41,7 +41,7 @@ import Gallery5 from '../Component/Gallery/Gallery5'
 import CompetitionForm from '../Component/Home/Competitionform'
 import Undergraduate from '../Component/Undergraduate'
 import Payement from '../Component/Payement'
-import Adminlayout from '../Component/Admin/Admin/Adminlayout'
+import Adminlayout from '../Component/Admin/Adminlayout'
 import Staff from '../Pages/Staffs'
 
 
