@@ -19,10 +19,11 @@ import { FaRegUser,FaSortAmountUp,FaChalkboardTeacher} from "react-icons/fa"
 import { GiArchiveRegister } from "react-icons/gi";
 import { MdPayments } from "react-icons/md";
 import { GrTransaction } from "react-icons/gr";
-import { FaFileAudio } from "react-icons/fa";
+import { FaFileAudio,FaExternalLinkAlt  } from "react-icons/fa";
 import { RiGalleryView } from "react-icons/ri";
-import { PiStudent } from "react-icons/pi";
-import { FaAngleRight } from "react-icons/fa";
+import { PiStudentDuotone  } from "react-icons/pi";
+import { FaAngleRight,FaFileUpload  } from "react-icons/fa";
+import { MdLibraryAddCheck,MdContacts  } from "react-icons/md";
 import Audiofile from "./Audiofile";
 import Registeredcourse from "./Registeredcourse";
 import AddFeeStructure from "./Addfeestructure";
@@ -43,6 +44,7 @@ const Adminlayout = () => {
       icon2:<FaAngleRight/>
     },
     {
+      icon:<FaExternalLinkAlt/>,
       title: "All Details",
       icon2:<FaAngleRight/>,
       submenu: [
@@ -53,8 +55,9 @@ const Adminlayout = () => {
     },
 
     {
+      icon:<FaFileUpload/>,
       title: "Upload",
-      icon2:<FaAngleRight/>,
+      icon2:<FaAngleRight/>, 
       submenu: [
         {icon:<LuGalleryHorizontalEnd/>, title: "Gallery Upload", path: "galleryupload" },
         {icon:<RiGalleryView/>, title: "Image/Video Upload", path: "imageupload" },
@@ -62,8 +65,10 @@ const Adminlayout = () => {
       ],
     },
     {
+      icon:<MdLibraryAddCheck/>,
       title: "Add Course",
       path: "addcourse",
+      icon2:<FaAngleRight/>
     },
     {icon:<FaSortAmountUp/>,
       title: "Add Fee structure for Course",
@@ -71,18 +76,22 @@ const Adminlayout = () => {
       icon2:<FaAngleRight/>
     },
     {
+      icon:<PiStudentDuotone/>,
       title: "Student Registered Course Details",
       path: "couse details",
+      icon2:<FaAngleRight/>
     },
     {
-      icon:<FaChalkboardTeacher/>,
+      icon:<FaChalkboardTeacher/>, 
       title: "Staff Details",
       path: "staffdetails",
       icon2:<FaAngleRight/>
     },
     {
-      title: "Contact us enquiy Details",
+      icon:<MdContacts/>,
+      title: "Contact us enquiy Details", 
       path: "enquiery",
+      icon2:<FaAngleRight/>
     },
   ]);
 
