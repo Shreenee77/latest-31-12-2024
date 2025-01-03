@@ -94,7 +94,7 @@ const Gallery5 = () => {
 
   const galleryImageStyle = {
     width: '100%',
-    padding:"10px",
+    padding:"20px",
     height: '280px',
     objectFit: 'cover',
     borderRadius: '8px',
@@ -108,6 +108,8 @@ const Gallery5 = () => {
     textAlign: 'center',
     padding: '10px 0',
   };
+
+  
 
   return (
     <div>

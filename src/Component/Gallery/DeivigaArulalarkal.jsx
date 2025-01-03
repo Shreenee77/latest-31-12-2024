@@ -234,12 +234,12 @@ const DeivigaArulalarkal = () => {
     <img
       src={image33}
       alt="Nammalvaar"
-      style={{ ...galleryImageStyle, width: '65%', height: 'auto' }} // Ensures images scale to container
+      style={{ ...galleryImageStyle, width: '60%', height: 'auto' }} // Ensures images scale to container
     />
     <div style={imageNameStyle}>
       {language === 'tamil'
-        ? 'திரு.சஞ்சய் சுப்பிரமணியம்'
-        : 'Mr. Sanjay Subrahmanyan'}
+        ? 'மதுரகவியாழ்வார்'
+        : 'Madhurakavi Alvar'}
     </div>
   </div>
 
@@ -254,10 +254,10 @@ const DeivigaArulalarkal = () => {
     <img
       src={image34}
       alt="Nammalvaar"
-      style={{ ...galleryImageStyle, width: '65%', height: 'auto' }}
+      style={{ ...galleryImageStyle, width: '60%', height: 'auto' }}
     />
     <div style={imageNameStyle}>
-      {language === 'tamil' ? 'திரு.டி.எம்.கிரிஷ்ணா' : 'Mr. T.M. Krishna'}
+      {language === 'tamil' ? 'திருமங்கையாழ்வார்' : 'Thirumangai Alvar'}
     </div>
   </div>
 
@@ -276,8 +276,8 @@ const DeivigaArulalarkal = () => {
     />
     <div style={imageNameStyle}>
       {language === 'tamil'
-        ? 'உமையாள்புரம் திரு. கே. சிவராமன்'
-        : 'Umayalpuram Thiru. K. Sivaraman'}
+        ?'ஆண்டாள்'
+        : 'Aandal'}
     </div>
   </div>
 
@@ -296,8 +296,8 @@ const DeivigaArulalarkal = () => {
     />
     <div style={imageNameStyle}>
       {language === 'tamil'
-        ? 'உமையாள்புரம் திரு. கே. சிவராமன்'
-        : 'Umayalpuram Thiru. K. Sivaraman'}
+        ? 'நம்மாழ்வார்'
+        : 'Nammalvar'}
     </div>
   </div>
 
@@ -316,8 +316,8 @@ const DeivigaArulalarkal = () => {
     />
     <div style={imageNameStyle}>
       {language === 'tamil'
-        ? 'உமையாள்புரம் திரு. கே. சிவராமன்'
-        : 'Umayalpuram Thiru. K. Sivaraman'}
+        ? 'அருணகிரிநாதர்'
+        : 'Arunagirinathar'}
     </div>
   </div>
 </div>
