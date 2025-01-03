@@ -372,6 +372,14 @@ const DeivigaArulalarkal = () => {
               .header-container a {
                 margin-bottom: 10px;
               }
+                 .gallery-item {
+              transform: none !important;  /* Disable shake on small screens */
+              opacity: 1 !important;        /* Ensure image is visible */
+              transition: none !important;  /* Disable transition effects */
+            }
+                    .lastone {
+              flex-direction: column;
+            }
             }
           `}
         </style>
