@@ -4,7 +4,7 @@ body {
 }
 
 .dashboard-container {
-  display: flex;
+  display: block;
 }
 .sidebar {
   width: 250px;
@@ -17,7 +17,7 @@ body {
   align-items: center;
   padding-top: 10px;
   border-radius: 7px;
-  overflow-y: auto; /* Enable vertical scroll */
+  overflow-y: auto;   
   box-shadow: 2px 0 5px rgba(59, 92, 97, 0.1); /* Sidebar shadow effect */
 }
 
@@ -140,8 +140,8 @@ body {
 }
 
 .topbar {
-  background-color: #34495e;
-  color: white;
+  background-color: #e9e9e9;
+  color: #035069;
   padding: 15px;
   position: fixed;
   width: calc(100% - 250px);
@@ -152,20 +152,14 @@ body {
   align-items: center;
 }
 
-.main-content {
-  margin-left: 300px;
-  margin-top: 60px;
-  padding: 20px;
-}
-
 /* Keep the submenu hidden, only show when the corresponding index is active */
 .sidebar .menu-item.active .dropdown {
   display: block;
 }
 .main-content {
+  overflow-x: auto;
   padding: 20px;
-  overflow-y: auto;
-  height: calc(100vh - 50px); /* Ensure space for the top bar */
+  height: calc(100vh - 80px); /* Ensure space for the top bar */
 }
 
 .sidebar .icon-rotate {
@@ -205,23 +199,11 @@ display: flex;
   margin-left: 250px;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  margin-top: 40px;
+  padding: 20px;
 }
 
-.topbar {
-display: flex;
-/* justify-content: space-between; */
-align-items: center;
-background-color: #fafafa;
-color: rgb(0, 0, 0);
-height: 80px;
-padding: 0 20px;
-position: fixed;
-width: calc(100% - 250px);
-left: 250px;
-top: 0;
-z-index: 1000;
-}
+
 
 .topbar .notifications,
 .topbar .messages {
@@ -932,7 +914,33 @@ button:hover {
   background-color: #cecece;
   color: #000;
 }
+.edit-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
 
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Spacing between inputs */
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1; /* Equal width inputs */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
 
 
 /* -------------transaction details----------- */
@@ -941,9 +949,13 @@ button:hover {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 10px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   font-family: Arial, sans-serif;
 }
+.transaction-row:hover {
+  background-color: #f1f1f1; /* Light gray background on hover */
+}
+
 
 .transaction-table {
   width: 100%;
@@ -965,9 +977,38 @@ table th input[type="checkbox"] {
 }
 
 .transaction-table th {
-  background-color: #079DCE;
+  background-color: #035069;
   color: white;
 }
+.download-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.download-popup label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.download-popup input {
+  padding: 8px;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.download-popup button {
+  padding: 8px 16px;
+  margin-right: 10px;
+}
+
+
 
 .recipient {
   display: flex;

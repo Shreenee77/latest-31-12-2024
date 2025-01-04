@@ -31,22 +31,24 @@ const Sidebar = ({ menuItems = [] }) => {
     <div
       className={`sidebar ${isSidebarCollapsed ? "collapsed" : ""}`}
       style={{
-        width: isSidebarCollapsed ? "60px" : "250px",
+        width: isSidebarCollapsed ? "-250px" : "250px",
+        height: "100vh",
+        overflowY: "auto",
+        backgroundColor: "#f8f9fa", // Sidebar theme color
+        position: "relative",
       }}
     >
-      {/* Toggle icon and logo positioned on the same line */}
+      {/* Toggle and Logo Container */}
       <div
         className="toggle-container"
         style={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
           padding: "10px",
           borderBottom: "1px solid #ccc",
           position: "sticky",
           top: 0,
-          left: 0,
-          zIndex: 1000,
+          left: 0,          zIndex: 1000,
         }}
       >
         <span
@@ -54,8 +56,8 @@ const Sidebar = ({ menuItems = [] }) => {
           onClick={handleSidebarToggle}
           style={{
             cursor: "pointer",
-            fontSize: "20px",
-            paddingRight:"13px"
+            fontSize: "24px",
+            marginRight: "10px",
           }}
         >
           <FaBars />
@@ -70,7 +72,13 @@ const Sidebar = ({ menuItems = [] }) => {
         )}
       </div>
 
-      <ul style={{ listStyleType: "none", padding: "10px 0" }}>
+      {/* Menu Items */}
+      <ul
+        style={{
+          listStyleType: "none",
+          padding: "10px 0",
+        }}
+      >
         {menuItems.map((item, index) => (
           <li
             key={index}
@@ -89,14 +97,14 @@ const Sidebar = ({ menuItems = [] }) => {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "flex-start",
+                    justifyContent: "center",
                     cursor: "pointer",
-                    fontSize: "16px",
-                    fontWeight: "bold",
                   }}
                 >
-                  <span style={{ marginRight: "10px" , fontSize:"20px" }}>{item.icon}</span>
-                  {!isSidebarCollapsed && <span>{item.title}</span>}
+                  {item.icon}
+                  {!isSidebarCollapsed && (
+                    <span style={{ marginLeft: "10px" }}>{item.title}</span>
+                  )}
                 </span>
                 {openIndex === index && (
                   <ul className="dropdown" style={{ paddingLeft: "20px" }}>
@@ -113,7 +121,9 @@ const Sidebar = ({ menuItems = [] }) => {
                           padding: "5px 0",
                         }}
                       >
-                        <Link to={`/admin/${subItem.path}`}>{subItem.title}</Link>
+                        <Link to={`/admin/${subItem.path}`}>
+                          {subItem.title}
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -128,13 +138,13 @@ const Sidebar = ({ menuItems = [] }) => {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "flex-start",
-                  fontSize: "16px",
-                  fontWeight: "bold",
+                  justifyContent: "center",
                 }}
               >
-                <span style={{ marginRight: "10px" , fontSize:"20px" }}>{item.icon}</span>
-                {!isSidebarCollapsed && <span>{item.title}</span>}
+                {item.icon}
+                {!isSidebarCollapsed && (
+                  <span style={{ marginLeft: "10px" }}>{item.title}</span>
+                )}
               </Link>
             )}
           </li>

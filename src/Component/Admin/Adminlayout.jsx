@@ -15,20 +15,27 @@ import Addstaff from "./Addstaff";
 import Paymentdetails from "./Paymentdetails";
 import Transactiondetails from "./Transactiondetails";
 import { LuLayoutDashboard,LuGalleryHorizontalEnd } from "react-icons/lu";
-import { FaRegUser,FaSortAmountUp} from "react-icons/fa";
+import { FaRegUser,FaSortAmountUp,FaChalkboardTeacher} from "react-icons/fa"
+import { GiArchiveRegister } from "react-icons/gi";
 import { MdPayments } from "react-icons/md";
 import { GrTransaction } from "react-icons/gr";
-import { FaFileAudio } from "react-icons/fa";
+import { FaFileAudio,FaExternalLinkAlt  } from "react-icons/fa";
 import { RiGalleryView } from "react-icons/ri";
-import { PiStudent } from "react-icons/pi";
-import { FaAngleRight } from "react-icons/fa";
+import { PiStudentDuotone  } from "react-icons/pi";
+import { FaAngleRight,FaFileUpload  } from "react-icons/fa";
+import { MdLibraryAddCheck,MdContacts  } from "react-icons/md";
 import Audiofile from "./Audiofile";
 import Registeredcourse from "./Registeredcourse";
+import AddFeeStructure from "./Addfeestructure";
+import { IoIosHome } from "react-icons/io";
+import Studentcourse from "./Studentcourse";
+import Studentdetails from "../Studentdetails";
+import Enquierydetails from "./Enquierydetails";
 
 const Adminlayout = () => {
   const [menuItems] = useState([
     {
-      icon:<LuLayoutDashboard/>,
+      icon:<IoIosHome/>,
       title: "Dashboard",
       path: "dashboard",      
       icon2:<FaAngleRight/>
@@ -40,44 +47,54 @@ const Adminlayout = () => {
       icon2:<FaAngleRight/>
     },
     {
+      icon:<FaExternalLinkAlt/>,
       title: "All Details",
+      icon2:<FaAngleRight/>,
       submenu: [
-        { icon:<MdPayments/>,title: "Payment Details", path: "paymentdetails" ,icon2:<FaAngleRight/>},
-        { icon:<GrTransaction/>,title: "Transaction Details", path: "tansactiondetails",icon2:<FaAngleRight/>},
-        { icon:<FaFileAudio/>,title: "Audio File", path: "audiofile",icon2:<FaAngleRight/> },
-        { title: "Register Course", path: "registercourse" },
+        { icon:<MdPayments/>,title: "Payment Details", path: "paymentdetails" },
+        { icon:<GrTransaction/>,title: "Transaction Details", path: "tansactiondetails"},        
+        { icon:<GiArchiveRegister/>,title: "Register Course", path: "registercourse" },
       ],
     },
 
     {
+      icon:<FaFileUpload/>,
       title: "Upload",
+      icon2:<FaAngleRight/>, 
       submenu: [
-        {icon:<LuGalleryHorizontalEnd/>, title: "Gallery Upload", path: "galleryupload",icon2:<FaAngleRight/> },
-        {icon:<RiGalleryView/>, title: "Image/Video Upload", path: "imageupload",icon2:<FaAngleRight/> },
+        {icon:<LuGalleryHorizontalEnd/>, title: "Gallery Upload", path: "galleryupload" },
+        {icon:<RiGalleryView/>, title: "Image/Video Upload", path: "imageupload" },
+        { icon:<FaFileAudio/>,title: "Audio File", path: "audiofile" },
       ],
     },
     {
+      icon:<MdLibraryAddCheck/>,
       title: "Add Course",
       path: "addcourse",
+      icon2:<FaAngleRight/>
     },
     {icon:<FaSortAmountUp/>,
-      title: "Add Fee structure for Course",
+      title: "Fee Management",
       path: "addfeecourse",
       icon2:<FaAngleRight/>
     },
     {
-      title: "Student Registered Course Details",
+      icon:<PiStudentDuotone/>,
+      title: "Course Registration",
       path: "couse details",
+      icon2:<FaAngleRight/>
     },
     {
-      icon:<PiStudent/>,
+      icon:<FaChalkboardTeacher/>, 
       title: "Staff Details",
       path: "staffdetails",
       icon2:<FaAngleRight/>
     },
     {
-      title: "Contact us enquiy Details",
-      path: "exquiery",
+      icon:<MdContacts/>,
+      title: "Contact us enquiy Details", 
+      path: "enquiery",
+      icon2:<FaAngleRight/>
     },
   ]);
 
@@ -110,6 +127,11 @@ const Adminlayout = () => {
             <Route path="tansactiondetails" element={<Transactiondetails/>} />
             <Route path="audiofile" element={<Audiofile/>} />
             <Route path="registercourse" element={<Registeredcourse/>} />
+            <Route path="addfeecourse" element={<AddFeeStructure/>} />
+            <Route path="userdetails" element={<Userdetails/>} />
+            <Route path="couse details" element={<Studentcourse/>}/>
+            <Route path="enquiery" element={<Enquierydetails/>}/>
+            <Route path="/student-details" element={<Studentdetails/>}/>
 
 
 
